@@ -1,1 +1,90 @@
-Hello World
+<!DOCTYPE html>
+<meta charset="UTF-8">
+ <title>Dr Jo Houghton</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<body>
+<!-- Navigation -->
+<nav class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="conway.html" class="w3-button w3-bar-item">Game of Life</a>
+  <a href="nowak_may.html" class="w3-button w3-bar-item">Nowak May</a>
+  <a href="links.html" class="w3-button w3-bar-item">Links</a>
+</nav>
+<!-- Slide Show -->
+<!--
+<section>
+  <img class="mySlides" src="bif.png" style="width:100%">
+  <img class="mySlides" src="cob.png" style="width:100%">
+</section>
+-->
+
+
+<section class="w3-container w3-content w3-center" style="max-width:600px">
+  
+  <h2 class="w3-wide">Jo Houghton - Machine Learning and Artificial Intelligence</h2>
+    <p class="w3-opacity"><i>Coder, Chemist and Teacher</i></p>
+    <img src="images\me.jpg" alt="Jo Houghton" style="width:10%">
+
+</section>
+<section class="w3-container w3-content w3-center" style="max-width:800px">
+
+
+    <p  class="w3-justify">Teacher Fellow in Computer Science at Southampton University </p>
+    <p  class="w3-justify">Proficient in Python and MATLAB </p>
+    <p  class="w3-justify">Learning Java, Javascript, C </p>
+
+    <p> Going to have to learn more Javascript as apparently Internet Explorer does not and will not ever support Javascript ES6, which is what I've learned so far..</p>
+    <p  class="w3-justify">2018 MSc Artificial Intelligence at the <a href="https://www.ecs.soton.ac.uk">University of Southampton<a> </p>
+    <p  class="w3-justify"> 2003 PhD Organometallic Chemistry <a href="www.sussex.ac.uk"> University of Sussex </a> </p>
+    <p  class="w3-justify"> 2003-2005 Post Doctoral Research  <a href="www.ucr.edu"> University of California Riverside </a> </p>
+    <p  class="w3-justify"> 2006-2016 Teaching and coordinating Chemistry, Maths and Science  <a href="http://www.stgeorgesschool.de">St Georges School Duisburg </a> &nbsp <a href="https://farnborough.ac.uk">Farnborough Sixth Form </a> &nbsp <a href="http://www.iwcollege.ac.uk">Isle of Wight College </a> &nbsp <a href="https://www.barton-peveril.ac.uk">Barton Peveril College </a> </p>
+    <p  class="w3-justify"> 2010 - 2017 Learning Python, Machine Learning, Artificial Intelligence Online <a href="https://www.edx.org/course/introduction-computational-thinking-data-mitx-6-00-2x-6">MITx Intro to Python </a> &nbsp
+      <a href="https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x-2">ColombiaX Artificial Intelligence </a>&nbsp
+    <a href="https://www.coursera.org/learn/machine-learning"> Stanford Coursera Machine Learning</a>&nbsp
+    <a href="https://www.coursera.org/learn/neural-networks">Toronto Coursera Neural Networks for Machine Learning </a> </p>
+      
+
+
+</section>
+
+<section class="w3-container w3-content w3-center" style="max-width:600px">
+<p class="w3-justify">
+I created this website for myself using an online tutorial <a href="https://www.w3schools.com/howto/howto_website.asp"> w3schools.com</a> with much additional help from  <a href="https://stackoverflow.com">stack overflow</a> </p>
+</section>
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="https://github.com/doctorjo/"><i class="fa fa-github"></i></a>
+  <p class="w3-medium">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </p>
+</footer>
+
+<script>  // Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+	}
+	</script>
+</body>
+</html>

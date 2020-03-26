@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.0/math.js"></script> 
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="w3-bar w3-black">
+    <a href="index.html" class="w3-button w3-bar-item">Home</a>
+    <a href="conway.html" class="w3-button w3-bar-item">Game of Life</a>
+    <a href="nowak_may.html" class="w3-button w3-bar-item">Nowak May</a>
+    <a href="links.html" class="w3-button w3-bar-item">Links</a>
+  </nav>
+
+  <section class="w3-container w3-content w3-center" style="max-width:600px">
+
+    <h2 class="w3-wide">Evolutionary Games</h2>
+    <h3 class="w3-opacity"><i>and spatial chaos</i></h3>
+    <p> M. A. Nowak and R. M. May, (1992) Nature 358 826-829 <a href="https://ped.fas.harvard.edu/files/ped/files/nature92_0.pdf"> PDF </a> </p>
+    <p> <small> Each time step, every cell plays a modified 'prisoners dilemma' game with itself and its 8 neighbours. It then choses to mimic the stragegy of the highest scoring neighbour, if its score is higher than its own. </p>
+
+  </section>
+<!-- <section class="w3-container w3-content w3-center" style="max-width:800px"> -->
+  <div class="floating-boxl">
+
+
+    <h3> Payoff Matrix </h3> 
+    <table id="t01">
+      <tr>
+	<th></th>
+	<th></th> 
+	<th>Other</th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+	<td></td>
+	<td align="center">C</td> 
+	<td>D</td>
+      </tr>
+      <tr>
+	<th>Self</th>
+	<td>C</td> 
+	<td align="center">1</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+	<td></td>
+	<td>D</td> 
+	<td><select  type="button" class = "w3-button w3-white" id="btn-b">
+	    <option value="1" > 1.0 </option>
+	    <option value="1.1" > 1.1 </option>
+	    <option value="1.2" > 1.2 </option>
+	    <option value="1.3" > 1.3 </option>
+	    <option value="1.4" > 1.4 </option>
+	    <option value="1.5" > 1.5 </option>
+	    <option value="1.6" > 1.6 </option>
+	    <option value="1.7" > 1.7 </option>
+	    <option value="1.8" > 1.8 </option>
+	    <option value="1.85" selected> 1.85 </option>
+	    <option value="1.9" > 1.9 </option>
+	    <option value="2" > 2.0 </option>
+	    <option value="2.1" > 2.1 </option>
+	    <option value="2.2" > 2.2 </option>
+	    <option value="2.3" > 2.3 </option>
+	    <option value="2.4" > 2.4 </option>
+	    <option value="3.0" > 3.0 </option>
+	    <option value="3.1" > 3.1 </option>
+	    
+	  </select>
+	</td>
+        <td>0</td>
+      </tr>
+    </table>
+
+    <h3> Step Count <span id="step"></span> </h3>
+    <h3 style="padding-top: 16px">Key</h3>
+    <table>
+      <tr>
+	<td style="background-color:#ff0000;"> </td>
+	<td> Defector </td>
+      </tr>
+      <tr>
+	<td style="background-color:#ffff00;" width="25px"> </td>
+	<td> New Defector </td>
+      </tr>
+      <tr>
+	<td style="background-color:#0000ff;"> </td>
+	<td> Cooperator </td>
+      </tr>
+      <tr>
+	<td  style="background-color:#00ff00;"> </td>
+	<td> New Cooperator </td>
+      </tr>
+    </table>
+
+    
+  </div>
+  
+
+    <div it="stage">
+  <canvas id="canvas" align="right"></canvas>
+    </div>
+
+ 
+
+
+  <div style="clear: both">&nbsp;</div>
+
+  <div class="w3-container">
+    <input  type="button" class="w3-button w3-black" id="btn-start" value="Start" >
+    <input  type="button" class="w3-button w3-black" id="btn-step" value="Step" >
+<select  type="button" class="w3-button w3-black" id="btn-generate" value="single_seed" >
+  <option value="singleD_seed" selected  > Single D seed </option>
+  <option value="singleC_seed" > Single C seed </option>
+  <option value="squareC_seed2" > 2x2 C seed </option>
+  <option value="squareC_seed3" > 3x3 C seed </option>
+  <option value="plusC_seed" > + C seed </option>  
+  <option value="randomise" > Random (0.1%)</option>
+
+</select>
+<select  type="button" class="w3-button w3-black" id="btn-width" value="21">
+  <option value="21" > 21 x 21 </option>
+  <option value="51" > 51 x 51 </option>
+  <option value="101" > 101 x 101 </option>
+  <option value="201" > 201 x 201 </option>
+  <option value="401" > 401 x 401 </option>
+</select>
+
+<select  type="button" class="w3-button w3-black" id="btn-wrap" value="toroid" >
+  <option value="toroid" > Wrap Edges </option>
+  <option value="none" selected > Fixed Edges </option>
+</select>
+
+<input type="button" class="w3-button w3-black" id="btn-reset" value="Reset">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="https://github.com/doctorjo/"><i class="fa fa-github"></i></a>
+  <p class="w3-medium">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </p>
+</footer>
+<script src="scripts/nw2.js"></script>
+</body>
+</html>

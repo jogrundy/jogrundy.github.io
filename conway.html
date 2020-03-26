@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="styles/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.0/math.js"></script> 
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="conway.html" class="w3-button w3-bar-item">Game of Life</a>
+  <a href="nowak_may.html" class="w3-button w3-bar-item">Nowak May</a>
+  <a href="links.html" class="w3-button w3-bar-item">Links</a>
+</nav>
+
+<section class="w3-container w3-content w3-center" style="max-width:800px">
+  <h2 class="w3-wide">Conway's Game of Life</h2>
+  <h3 class="w3-opacity"><i>Modelling artificial life</i></h3>
+  <p>Mathematicial John Conway developed this game back in 1970, here implemented as a cellular automaton with very simple rules </p>
+</section>
+<section class="w3-container w3-content" style="max-width:800px">
+  <small>
+  <ul>
+    <li><small> If there are three live neigbours, a dead cell comes alive </li>
+    <li><small> If there are 2 or three 'live' neighbouring cells, a living cell remains alive</li>
+    <li><small> If there are more than three live neighbours, a living cell dies</li>
+    <li><small> A live cell with less than 2 live neighbours dies. </li>
+  </ul>
+  </small>
+</section>
+
+
+
+<section class="w3-container w3-content w3-center" style="max-width:600px">
+<div id="stage">
+  <canvas id="canvas"></canvas>
+</div>
+</section>
+ 
+
+<div class ="w3-container  w3-center">
+  <input  type="button" class = "w3-button w3-black" id="btn-start" value="Start" ></w3-button>
+ <input  type="button" class = "w3-button w3-black" id="btn-step" value="Step" ></w3-button>
+<input  type="button" class = "w3-button w3-black" id="btn-generate" value="Generate" >
+ </input>
+<select  type="button" class = "w3-button w3-black" id="btn-size" value="10">
+  <option value="10">10 x 10</option>
+  <option value="50">50 x 50</option>
+  <option value="100">100 x 100</option>
+  <option value="300" selected>300 x 300</option>
+
+</select>
+
+<select  type="button" class = "w3-button w3-black" id="btn-wrap" value="toroid" >
+    <option value="toroid" > Wrap Edges </option>
+    <option value="none" > Fixed Edges </option>
+    </select>
+  
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="https://github.com/doctorjo/"><i class="fa fa-github"></i></a>
+  <p class="w3-medium">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </p>
+</footer>
+<script src="scripts/gol.js"></script>
+</body>
+</html>
